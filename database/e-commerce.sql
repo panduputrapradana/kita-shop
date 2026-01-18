@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 17, 2026 at 05:16 PM
+-- Generation Time: Jan 18, 2026 at 04:03 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -73,7 +73,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_pict`, `product_description`, `product_category`, `product_sub_category`, `product_price`, `product_stock`, `product_status`) VALUES
-(21, 'Testing Pertama', '1768666484_best-product-1.jpg', 'Testing', 13, 3, 1234, 12, 1);
+(21, 'Testing Pertama', '1768666484_best-product-1.jpg', 'Testing', 13, 3, 1234, 8, 1),
+(23, 'Testing Kedua', '1768747467_900447270.PNG', 'Test', 13, 4, 9999, 10, 1);
 
 -- --------------------------------------------------------
 
@@ -84,9 +85,19 @@ INSERT INTO `product` (`product_id`, `product_name`, `product_pict`, `product_de
 CREATE TABLE `stock` (
   `stock_id` int(11) NOT NULL,
   `product_id` int(11) NOT NULL,
-  `stock_status` int(1) NOT NULL,
-  `stock_qty` int(11) NOT NULL
+  `stock_status` varchar(4) NOT NULL,
+  `stock_qty` int(11) NOT NULL,
+  `stock_created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `stock`
+--
+
+INSERT INTO `stock` (`stock_id`, `product_id`, `stock_status`, `stock_qty`, `stock_created_at`) VALUES
+(1, 21, 'in', 20, '2026-01-18 15:00:51'),
+(2, 21, 'in', 56, '2026-01-18 15:01:06'),
+(3, 21, 'out', 80, '2026-01-18 15:01:40');
 
 -- --------------------------------------------------------
 
@@ -197,13 +208,13 @@ ALTER TABLE `category`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `stock`
 --
 ALTER TABLE `stock`
-  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `stock_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `t_item`

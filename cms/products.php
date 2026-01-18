@@ -56,30 +56,6 @@ $title = 'Products';
                         </a>
                     </div>
 
-
-                    <!-- Modal Delete -->
-                    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog" role="document">
-                            <div class="modal-content">
-                                <form action="" method="POST">
-                                    <input type="hidden" name="delete_category_id" id="delete_category_id">
-                                    <input type="hidden" name="action" value="delete">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="deleteModalTitle">Tambah Data <?= $title; ?></h5>
-                                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">×</span>
-                                        </button>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                                        <button type="submit" name="submit" class="btn btn-danger">Delete</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Content Row -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
@@ -134,9 +110,14 @@ $title = 'Products';
                                     <td>${item.product_price}</td>
                                     <td>${item.product_stock}</td>
                                     <td>
-                                         ${item.product_status == 1 
-                                            ? '<span class="badge badge-success">Ready</span>' 
-                                            : '<span class="badge badge-secondary">Tidak Ready</span>'}
+                                         <span 
+                                            class="badge ${item.product_status == 1 ? 'badge-success':'badge-secondary'} btnStatus" 
+                                            style="cursor:pointer"
+                                            data-id="${item.product_id}"
+                                            data-status="${item.product_status}"
+                                            >
+                                            ${item.product_status == 1 ? 'Ready':'Tidak Ready'}
+                                        </span>
                                     </td>
                                     <td>
                                         <button class="btn btn-warning btnEdit" data-id="${item.product_id}">Edit</button>
@@ -178,6 +159,36 @@ $title = 'Products';
                                         alert(result.message);
                                         if (result.status) {
                                             location.reload(); // refresh tabel
+                                        }
+                                    });
+                            }
+                        });
+
+                        document.addEventListener("click", function(e) {
+                            if (e.target.classList.contains("btnStatus")) {
+                                let id = e.target.dataset.id;
+
+                                let formData = new FormData();
+                                formData.append("action", "toggle_status");
+                                formData.append("product_id", id);
+
+                                fetch("./api/products/read.php", {
+                                        method: "POST",
+                                        body: formData
+                                    })
+                                    .then(res => res.json())
+                                    .then(result => {
+                                        if (result.status) {
+
+                                            if (result.new_status == 1) {
+                                                e.target.classList.remove("badge-secondary");
+                                                e.target.classList.add("badge-success");
+                                                e.target.innerText = "Ready";
+                                            } else {
+                                                e.target.classList.remove("badge-success");
+                                                e.target.classList.add("badge-secondary");
+                                                e.target.innerText = "Tidak Ready";
+                                            }
                                         }
                                     });
                             }

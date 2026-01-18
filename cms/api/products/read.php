@@ -24,3 +24,22 @@ if ($method == 'GET') {
         "data" => $data
     ]);
 }
+
+if ($method == 'POST' && isset($_POST['action']) && $_POST['action'] == 'toggle_status') {
+    $id = $_POST['product_id'];
+
+    // ambil status lama
+    $q = $conn->query("SELECT product_status FROM product WHERE product_id=$id");
+    $row = $q->fetch_assoc();
+
+    $newStatus = ($row['product_status'] == 1) ? 0 : 1;
+
+    // update
+    $conn->query("UPDATE $table SET product_status=$newStatus WHERE product_id=$id");
+
+    echo json_encode([
+        "status" => true,
+        "new_status" => $newStatus
+    ]);
+    exit;
+}

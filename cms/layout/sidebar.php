@@ -50,8 +50,10 @@
             <span>Transaction</span></a>
     </li>
 
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+    <li class="nav-item <?php if ($title == 'Stock') {
+                            echo 'active';
+                        } ?>">
+        <a class="nav-link" href="stock.php">
             <i class="fas fa-fw fa-tags"></i>
             <span>Stock</span></a>
     </li>
