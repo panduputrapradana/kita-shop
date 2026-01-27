@@ -50,7 +50,7 @@ $title = 'Stock';
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h3 mb-0 text-gray-800"><?= $title; ?></h1>
-                        <a href="stockHistory.php" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
+                        <a href="createProduct.php" class="d-none d-sm-inline-block btn btn-sm btn-warning shadow-sm">
                             <i
                                 class="fas fa-recycle fa-sm text-white-50"></i> History
                         </a>
@@ -103,16 +103,18 @@ $title = 'Stock';
                                         <tr>
                                             <th width='10'>No</th>
                                             <th>Name</th>
-                                            <th>Stock</th>
-                                            <th width='200'>Action</th>
+                                            <th>Tipe</th>
+                                            <th>Qty</th>
+                                            <th>Tanggal</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
                                             <th>No</th>
                                             <th>Name</th>
-                                            <th>Stock</th>
-                                            <th>Action</th>
+                                            <th>Tipe</th>
+                                            <th>Qty</th>
+                                            <th>Tanggal</th>
                                         </tr>
                                     </tfoot>
                                     <tbody id="productTable">
@@ -126,7 +128,7 @@ $title = 'Stock';
                     <!-- Script Update -->
                     <script>
                         function loadStock() {
-                            fetch("./api/products/read.php")
+                            fetch("./api/stock/read.php")
                                 .then(response => response.json())
                                 .then(result => {
                                     let rows = "";
@@ -136,14 +138,9 @@ $title = 'Stock';
                                     <tr>
                                     <td>${no++}</td>
                                     <td>${item.product_name}</td>
-                                    <td>${item.product_stock}</td>
-                                    <td>
-                                        <a class="btn btn-warning btnStock" 
-                                            data-id="${item.product_id}" 
-                                            data-toggle="modal" data-target="#stockModal">
-                                            Update
-                                        </a>
-                                    </td>
+                                    <td>${item.stock_status}</td>
+                                    <td>${item.stock_qty}</td>
+                                    <td>${item.stock_created_at}</td>
                                     </tr>
                                 `;
                                     });

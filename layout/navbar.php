@@ -26,9 +26,9 @@
                     <a href="product.php" class="nav-item nav-link <?php if ($title == 'Product') {
                                                                         echo 'active';
                                                                     } ?>">Products</a>
-                    <a href="contact.php" class="nav-item nav-link <?php if ($title == 'Contact') {
-                                                                        echo 'active';
-                                                                    } ?>">Contact</a>
+                    <!-- <a href="contact.php" class="nav-item nav-link <?php if ($title == 'Contact') {
+                                                                            echo 'active';
+                                                                        } ?>">Contact</a> -->
                     <a href="tracking.php" class="nav-item nav-link <?php if ($title == 'Tracking') {
                                                                         echo 'active';
                                                                     } ?>">Tracking</a>

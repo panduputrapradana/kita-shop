@@ -1,3 +1,15 @@
+<?php
+
+if (isset($_POST['search'])) {
+    $keyword = $_POST['keyword'];
+
+    if (isset($keyword)) {
+        header("Location: search.php?keyword=$keyword");
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,5 +1,5 @@
 <?php
-require_once 'function/product.php';
+require_once 'function/search.php';
 
 if (isset($_POST['search'])) {
     $keyword = $_POST['keyword'];
@@ -142,7 +142,8 @@ require_once 'layout/header.php';
                         <div class="col-lg-9">
                             <div class="row g-4 justify-content-center">
                                 <?php
-                                $rows = read();
+                                $keyword = $_GET['keyword'];
+                                $rows = read($keyword);
 
                                 foreach ($rows as $row) {
                                 ?>
