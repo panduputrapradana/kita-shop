@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 18, 2026 at 04:03 PM
+-- Generation Time: Jan 27, 2026 at 08:14 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -37,18 +37,13 @@ CREATE TABLE `category` (
 --
 
 INSERT INTO `category` (`category_id`, `category_name`) VALUES
-(1, '1'),
-(2, 'Testing 2'),
-(3, 'Testing 3'),
-(4, 'Testing'),
-(5, 'Testing'),
-(6, 'Testing'),
-(7, 'Testing'),
-(8, 'Robert'),
-(9, 'Robert'),
-(11, 'Testing'),
-(13, 'Testings Update'),
-(20, 'Testingsd');
+(22, 'Lokal'),
+(23, 'Impor'),
+(24, 'Tinggi Vitamin'),
+(25, 'Favorit'),
+(26, 'Diet'),
+(27, 'Bulking'),
+(28, 'Jus');
 
 -- --------------------------------------------------------
 
@@ -73,8 +68,15 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_pict`, `product_description`, `product_category`, `product_sub_category`, `product_price`, `product_stock`, `product_status`) VALUES
-(21, 'Testing Pertama', '1768666484_best-product-1.jpg', 'Testing', 13, 3, 1234, 8, 1),
-(23, 'Testing Kedua', '1768747467_900447270.PNG', 'Test', 13, 4, 9999, 10, 1);
+(24, 'Jeruk', '1769257711_23285229.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 24, 2000, 20, 1),
+(25, 'Berry', '1769257751_108325326.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 5000, 100, 1),
+(26, 'Pisang', '1769257786_149186006.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 26, 22, 1000, 3000, 1),
+(27, 'Labu', '1769257831_638230323.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 7000, 14, 1),
+(28, 'Anggur', '1769257888_365193523.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 25, 2000, 200, 1),
+(29, 'Apel', '1769257948_259760029.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 10000, 130, 1),
+(30, 'Semangka', '1769258113_1998138438.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 20000, 120, 1),
+(31, 'Mangga', '1769258222_308578496.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 27, 7000, 230, 1),
+(32, 'Jeruk Mandarin', '1769335086_361883425.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 27, 12000, 100, 1);
 
 -- --------------------------------------------------------
 
@@ -89,15 +91,6 @@ CREATE TABLE `stock` (
   `stock_qty` int(11) NOT NULL,
   `stock_created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `stock`
---
-
-INSERT INTO `stock` (`stock_id`, `product_id`, `stock_status`, `stock_qty`, `stock_created_at`) VALUES
-(1, 21, 'in', 20, '2026-01-18 15:00:51'),
-(2, 21, 'in', 56, '2026-01-18 15:01:06'),
-(3, 21, 'out', 80, '2026-01-18 15:01:40');
 
 -- --------------------------------------------------------
 
@@ -202,13 +195,13 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `stock`
