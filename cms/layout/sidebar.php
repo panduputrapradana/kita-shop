@@ -44,8 +44,10 @@
     <!-- Nav Item - Pages Collapse Menu -->
 
     <!-- Nav Item - Tables -->
-    <li class="nav-item">
-        <a class="nav-link" href="tables.html">
+    <li class="nav-item <?php if ($title == 'Transaction') {
+                            echo 'active';
+                        } ?>">
+        <a class="nav-link" href="transaction.php">
             <i class="fas fa-fw fa-shopping-cart"></i>
             <span>Transaction</span></a>
     </li>

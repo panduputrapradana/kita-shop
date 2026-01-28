@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 27, 2026 at 08:14 AM
+-- Generation Time: Jan 28, 2026 at 04:12 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 7.4.33
 
@@ -68,15 +68,15 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_name`, `product_pict`, `product_description`, `product_category`, `product_sub_category`, `product_price`, `product_stock`, `product_status`) VALUES
-(24, 'Jeruk', '1769257711_23285229.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 24, 2000, 20, 1),
+(24, 'Jeruk', '1769257711_23285229.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 24, 2000, 19, 1),
 (25, 'Berry', '1769257751_108325326.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 5000, 100, 1),
 (26, 'Pisang', '1769257786_149186006.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 26, 22, 1000, 3000, 1),
 (27, 'Labu', '1769257831_638230323.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 7000, 14, 1),
-(28, 'Anggur', '1769257888_365193523.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 25, 2000, 200, 1),
-(29, 'Apel', '1769257948_259760029.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 10000, 130, 1),
+(28, 'Anggur', '1769257888_365193523.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 25, 2000, 199, 1),
+(29, 'Apel', '1769257948_259760029.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 10000, 129, 1),
 (30, 'Semangka', '1769258113_1998138438.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 25, 20000, 120, 1),
-(31, 'Mangga', '1769258222_308578496.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 27, 7000, 230, 1),
-(32, 'Jeruk Mandarin', '1769335086_361883425.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 27, 12000, 100, 1);
+(31, 'Mangga', '1769258222_308578496.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 22, 27, 7000, 227, 1),
+(32, 'Jeruk Mandarin', '1769335086_361883425.jpg', 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Cum modi aliquam repudiandae esse? Eaque, mollitia placeat! Voluptas aliquam voluptatibus error beatae saepe nobis repudiandae aliquid provident eveniet officiis voluptates quod veritatis, odio commodi praesentium? Officia, sint eligendi repellendus exercitationem autem et tenetur obcaecati corrupti assumenda facilis, architecto totam ad maxime.', 23, 27, 12000, 90, 1);
 
 -- --------------------------------------------------------
 
@@ -102,11 +102,20 @@ CREATE TABLE `transaction` (
   `transaction_id` varchar(56) NOT NULL,
   `transaction_name` varchar(56) NOT NULL,
   `transaction_address` text NOT NULL,
-  `transaction_payment_method` varchar(56) NOT NULL,
-  `transaction_payment_status` varchar(56) NOT NULL,
+  `transaction_phone` varchar(20) NOT NULL,
+  `transaction_email` varchar(56) NOT NULL,
   `transaction_status` varchar(56) NOT NULL,
-  `created_at` datetime NOT NULL
+  `transaction_total` int(11) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`transaction_id`, `transaction_name`, `transaction_address`, `transaction_phone`, `transaction_email`, `transaction_status`, `transaction_total`, `created_at`) VALUES
+('KTS20260127143830865', 'Testing', 'Jl. Soekarno-Hatta No.378, Kb. Lega, Kec. Bojongloa Kidul, Kota Bandung, Jawa Barat 40235', '8023802082', 'test@gmail.com', 'Diproses', 43000, '2026-01-28 14:54:09'),
+('KTS20260127144107620', 'Testing 2', 'Jl. Soekarno-Hatta No.378, Kb. Lega, Kec. Bojongloa Kidul, Kota Bandung, Jawa Barat 40235', '108103182318', 'test@gmail.com', 'Diproses', 74000, '2026-01-28 14:54:13');
 
 -- --------------------------------------------------------
 
@@ -121,6 +130,16 @@ CREATE TABLE `t_item` (
   `t_item_qty` int(11) NOT NULL,
   `sub_total` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `t_item`
+--
+
+INSERT INTO `t_item` (`t_item_id`, `transaction_id`, `product_id`, `t_item_qty`, `sub_total`) VALUES
+(5, 'KTS20260127143830865', 32, 3, 12000),
+(6, 'KTS20260127143830865', 31, 1, 7000),
+(7, 'KTS20260127144107620', 32, 5, 12000),
+(8, 'KTS20260127144107620', 31, 2, 7000);
 
 -- --------------------------------------------------------
 
@@ -213,7 +232,7 @@ ALTER TABLE `stock`
 -- AUTO_INCREMENT for table `t_item`
 --
 ALTER TABLE `t_item`
-  MODIFY `t_item_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `t_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `user`

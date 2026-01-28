@@ -1,5 +1,7 @@
 <?php
 
+require_once 'function/tracking.php';
+
 if (isset($_POST['search'])) {
     $keyword = $_POST['keyword'];
 
@@ -59,13 +61,27 @@ require_once 'layout/header.php';
         <div class="container py-5">
             <div class="row g-4 justify-content-end">
                 <div class="col-md-12 col-lg-12 col-xl-12">
-                    <div class="form-item">
-                        <label class="form-label my-3">Input Code<sup>*</sup></label>
-                        <input type="text" class="form-control">
-                    </div>
-                    <div class="row g-4 text-center align-items-center justify-content-center pt-4">
-                        <div class="col-4"><button type="button" class="btn btn-sm border-secondary py-3 px-4 text-uppercase w-100 text-primary">Place Order</button></div>
-                    </div>
+                    <?php
+                    $rows = [];
+                    $summary = null;
+                    if (isset($_POST['tracking']) && !empty($_POST['transaction_id'])) {
+                        $transaction_id = $_POST['transaction_id'];
+
+                        $rows = track($transaction_id);
+                        $summary = track2($transaction_id);
+                    }
+                    ?>
+                    <form action="" method="post">
+                        <div class="form-item">
+                            <label class="form-label my-3">Input Code<sup>*</sup></label>
+                            <input type="text" class="form-control" name="transaction_id">
+                        </div>
+                        <div class="row g-4 text-center align-items-center justify-content-center pt-4">
+                            <div class="col-4">
+                                <button type="submit" name="tracking" class="btn btn-sm border-secondary py-3 px-4 text-uppercase w-100 text-primary">Tracking</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="mt-5">
@@ -78,48 +94,88 @@ require_once 'layout/header.php';
                             <th scope="col">Name</th>
                             <th scope="col">Price</th>
                             <th scope="col">Quantity</th>
-                            <th scope="col">Total</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">Sub Total</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <th scope="row">
-                                <div class="d-flex align-items-center">
-                                    <img src="img/vegetable-item-3.png" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
-                                </div>
-                            </th>
-                            <td>
-                                <p class="mb-0 mt-4">Big Banana</p>
-                            </td>
-                            <td>
-                                <p class="mb-0 mt-4">2.99 $</p>
-                            </td>
-                            <td>
-                                <div class="input-group quantity mt-4" style="width: 100px;">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-minus rounded-circle bg-light border">
-                                            <i class="fa fa-minus"></i>
-                                        </button>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm text-center border-0" value="1">
-                                    <div class="input-group-btn">
-                                        <button class="btn btn-sm btn-plus rounded-circle bg-light border">
-                                            <i class="fa fa-plus"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td>
-                                <p class="mb-0 mt-4">2.99 $</p>
-                            </td>
-                            <td>
-                                <button class="btn btn-md rounded-circle bg-light border mt-4">
-                                    <i class="fa fa-times text-danger"></i>
-                                </button>
-                            </td>
+                        <?php
 
-                        </tr>
+                        if ($summary) {
+                            foreach ($rows as $row) { ?>
+                                <tr>
+                                    <th scope="row">
+                                        <div class="d-flex align-items-center">
+                                            <img src="assets/uploads/<?= $row['product_pict']; ?>" class="img-fluid me-5 rounded-circle" style="width: 80px; height: 80px;" alt="">
+                                        </div>
+                                    </th>
+                                    <td>
+                                        <p class="mb-0 mt-4"><?= $row['product_name']; ?></p>
+                                    </td>
+                                    <td>
+                                        <p class="mb-0 mt-4"><?= $row['product_price']; ?></p>
+                                    </td>
+                                    <td>
+                                        <p class="mb-0 mt-4"><?= $row['t_item_qty']; ?></p>
+                                    </td>
+                                    <td>
+                                        <p class="mb-0 mt-4"><?= $row['product_price'] * $row['t_item_qty']; ?></p>
+                                    </td>
+
+                                </tr>
+                            <?php
+                            }
+                            $row = [];
+                            if (isset($_POST['tracking'])) {
+                                $transaction_id = $_POST['transaction_id'];
+                                if (isset($transaction_id)) {
+                                    $row = track2($transaction_id);
+                                }
+                            }
+                            ?>
+                            <tr>
+                                <td>Total Harga</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><?= $row['transaction_total']; ?></td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <?php if ($row['transaction_status'] == 'Diproses') { ?>
+                                        <span class="btn btn-warning"><?= $row['transaction_status']; ?></span>
+                                    <?php } else { ?>
+                                        <span class="btn btn-success"><?= $row['transaction_status']; ?></span>
+                                    <?php } ?>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a href="function/invoice.php?trx=<?= $row['transaction_id']; ?>" class="btn btn-success">Cetak Invoice</a>
+                                </td>
+                            </tr>
+                        <?php
+                        } else if (isset($_POST['tracking'])) { ?>
+                            <div class="alert alert-danger">
+                                Kode transaksi tidak ditemukan!
+                            </div>
+
+                        <?php
+                        }
+
+                        ?>
+
+
+
+
                     </tbody>
                 </table>
             </div>
