@@ -35,12 +35,14 @@ $stmtItem = $conn->prepare("INSERT INTO t_item
 (transaction_id, product_id, t_item_qty, sub_total) VALUES (?,?,?,?)");
 
 foreach ($cart as $item) {
+    $sub_total = $item['price'] * $item['t_item_qty'];
+
     $stmtItem->bind_param(
         "siii",
         $transaction_id,
         $item['product_id'],
         $item['t_item_qty'],
-        $item['price'] * $item['t_item_qty']
+        $sub_total
     );
     $stmtItem->execute();
 

@@ -1,6 +1,8 @@
 <?php
 require_once 'config/database.php';
 
+session_start();
+
 $username = $_POST['username'];
 $password = md5($_POST['password']);
 

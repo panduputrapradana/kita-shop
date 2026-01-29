@@ -78,14 +78,6 @@ $title = 'Transaction';
                                                 <th scope="col">SubTotal</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th scope="col">Products</th>
-                                                <th scope="col">Quantity</th>
-                                                <th scope="col">Price</th>
-                                                <th scope="col">SubTotal</th>
-                                            </tr>
-                                        </tfoot>
                                         <tbody id="productablex">
 
                                         </tbody>
@@ -221,6 +213,50 @@ $title = 'Transaction';
                                             }
                                         }
                                     });
+                            }
+                        });
+
+                        document.addEventListener("click", function(e) {
+                            if (e.target.classList.contains("btnStock")) {
+
+                                let trx_id = e.target.dataset.id;
+
+                                // reset modal
+                                document.getElementById("transaction_address").value = "";
+                                document.getElementById("productablex").innerHTML = "";
+
+                                let formData = new FormData();
+                                formData.append("transaction_id", trx_id);
+
+                                fetch("./api/transaction/detail.php", {
+                                        method: "POST",
+                                        body: formData
+                                    })
+                                    .then(res => res.json())
+                                    .then(result => {
+                                        if (result.status) {
+
+                                            // isi alamat
+                                            document.getElementById("transaction_address").value = result.address;
+
+                                            // isi tabel produk
+                                            let rows = "";
+                                            result.items.forEach(item => {
+                                                rows += `
+                                                            <tr>
+                                                                <td>${item.product_name}</td>
+                                                                <td>${item.t_item_qty}</td>
+                                                                <td>Rp ${item.product_price}</td>
+                                                                <td>Rp ${item.subtotal}</td>
+                                                            </tr>
+                                                        `;
+                                            });
+
+                                            document.getElementById("productablex").innerHTML = rows;
+                                        }
+                                    });
+
+                                $('#stockModal').modal('show');
                             }
                         });
                     </script>

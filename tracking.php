@@ -159,7 +159,7 @@ require_once 'layout/header.php';
                                 <td></td>
                                 <td></td>
                                 <td>
-                                    <a href="function/invoice.php?trx=<?= $row['transaction_id']; ?>" class="btn btn-success">Cetak Invoice</a>
+                                    <a href="function/invoice.php?trx=<?= $row['transaction_id']; ?>" target="_blank" class="btn btn-success">Cetak Invoice</a>
                                 </td>
                             </tr>
                         <?php
