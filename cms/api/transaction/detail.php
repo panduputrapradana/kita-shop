@@ -1,9 +1,18 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
-require_once "../../config/database.php";
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
+require_once __DIR__ . "/../../config/database.php";
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -23,8 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             p.product_price,
             t.t_item_qty,
             (p.product_price * t.t_item_qty) AS subtotal
-        FROM t_item t
-        JOIN product p ON t.product_id = p.product_id
+        FROM `t_item` t
+        JOIN `product` p ON t.product_id = p.product_id
         WHERE t.transaction_id = '$id'
     ");
 

@@ -1,9 +1,18 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
-require_once "../../config/database.php";
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
+require_once __DIR__ . "/../../config/database.php";
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -13,7 +22,7 @@ $table = 'product';
 // Get Edit
 if ($method == 'GET' && isset($_GET['id'])) {
     $id = $_GET['id'];
-    $result = $conn->query("SELECT * FROM $table WHERE product_id=$id");
+    $result = $conn->query("SELECT * FROM `$table` WHERE product_id=$id");
     $row = $result->fetch_assoc();
 
     echo json_encode([
@@ -39,7 +48,7 @@ if ($method == 'POST' && $_POST['action'] == 'update') {
 
     // Jika tidak upload gambar baru
     if ($_FILES['product_pict']['name'] == "") {
-        $sql = "UPDATE product SET 
+        $sql = "UPDATE `product` SET 
         product_name=?,
         product_description=?,
         product_category=?,
@@ -54,7 +63,7 @@ if ($method == 'POST' && $_POST['action'] == 'update') {
         $image = time() . "_" . $_FILES['product_pict']['name'];
         move_uploaded_file($_FILES['product_pict']['tmp_name'], "../../../assets/uploads/" . $image);
 
-        $sql = "UPDATE product SET 
+        $sql = "UPDATE `product` SET 
         product_name=?,
         product_pict=?,
         product_description=?,

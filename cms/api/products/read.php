@@ -1,9 +1,18 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
-require_once "../../config/database.php";
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
+require_once __DIR__ . "/../../config/database.php";
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -11,8 +20,8 @@ $table = 'product';
 
 if ($method == 'GET') {
     $result = $conn->query("SELECT product_id, product_name, product_category, product_price, product_stock, product_status, category_name 
-    FROM $table
-    JOIN category ON $table.product_category = category.category_id
+    FROM `$table`
+    JOIN `category` ON `$table`.product_category = category.category_id
     ORDER BY product_id DESC");
 
     $data = [];
@@ -30,7 +39,7 @@ if ($method == 'POST' && isset($_POST['action']) && $_POST['action'] == 'toggle_
     $id = $_POST['product_id'];
 
     // ambil status lama
-    $q = $conn->query("SELECT product_status FROM product WHERE product_id=$id");
+    $q = $conn->query("SELECT product_status FROM `product` WHERE product_id=$id");
     $row = $q->fetch_assoc();
 
     $newStatus = ($row['product_status'] == 1) ? 0 : 1;

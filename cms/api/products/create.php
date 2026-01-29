@@ -1,9 +1,18 @@
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
 header("Content-Type: application/json");
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
-require_once "../../config/database.php";
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    http_response_code(200);
+    exit;
+}
+
+require_once __DIR__ . "/../../config/database.php";
 
 $method = $_SERVER['REQUEST_METHOD'];
 
@@ -41,7 +50,7 @@ if ($method == 'POST') {
     }
 
     // ==== Simpan ke DB ====
-    $stmt = $conn->prepare("INSERT INTO product 
+    $stmt = $conn->prepare("INSERT INTO `product` 
         (product_name, product_pict, product_description, product_category, product_sub_category, product_price, product_stock, product_status)
         VALUES (?,?,?,?,?,?,?,?)
     ");
