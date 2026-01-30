@@ -1,0 +1,506 @@
+{
+  "info": {
+    "_postman_id": "c1947796-4782-485e-b370-23e8cc424f8e",
+    "name": "Pemrograman Mobile 2",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43831441",
+    "_collection_link": "https://go.postman.co/collection/43831441-c1947796-4782-485e-b370-23e8cc424f8e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Product",
+      "item": [
+        {
+          "name": "Read",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://royalblue-hedgehog-125991.hostingersite.com/cms/api/products/read.php",
+              "protocol": "https",
+              "host": [
+                "royalblue-hedgehog-125991",
+                "hostingersite",
+                "com"
+              ],
+              "path": [
+                "cms",
+                "api",
+                "products",
+                "read.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Create",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "product_name",
+                  "value": "Testing APi",
+                  "type": "text",
+                  "uuid": "571f0f1d-459e-487f-964b-ff6e9a952ddb"
+                },
+                {
+                  "key": "product_pict",
+                  "type": "file",
+                  "uuid": "0eba5b5e-2c5e-4ce9-90a1-248a118c9423",
+                  "src": "postman-cloud:///1f0f3a10-3094-49f0-be32-be43d2fe886f"
+                },
+                {
+                  "key": "product_description",
+                  "value": "Testing_Desc",
+                  "type": "text",
+                  "uuid": "7c1ae152-f387-42d9-9ba1-8c5b9b4fefe0"
+                },
+                {
+                  "key": "product_category",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "a6dca487-523e-4151-a9c4-d9bfde71b5dd"
+                },
+                {
+                  "key": "product_sub_category",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "cfec3c8c-bbb7-4c01-b729-bfedcc167f76"
+                },
+                {
+                  "key": "product_price",
+                  "value": "300000",
+                  "type": "text",
+                  "uuid": "e977746b-3972-48af-90c5-9cbd3b2e3392"
+                },
+                {
+                  "key": "product_stock",
+                  "value": "100",
+                  "type": "text",
+                  "uuid": "1b227f80-c244-4659-a9db-f92ddef89d47"
+                },
+                {
+                  "key": "product_status",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "2f442c67-e513-4ec0-8e86-8c9d897adbda"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://royalblue-hedgehog-125991.hostingersite.com//cms/api/products/create.php",
+              "protocol": "https",
+              "host": [
+                "royalblue-hedgehog-125991",
+                "hostingersite",
+                "com"
+              ],
+              "path": [
+                "",
+                "cms",
+                "api",
+                "products",
+                "create.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "product_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "bbd1780b-f242-4836-8456-907d37d76f1e"
+                },
+                {
+                  "key": "product_name",
+                  "value": "Testing APi",
+                  "type": "text",
+                  "uuid": "571f0f1d-459e-487f-964b-ff6e9a952ddb"
+                },
+                {
+                  "key": "product_pict",
+                  "type": "file",
+                  "uuid": "0eba5b5e-2c5e-4ce9-90a1-248a118c9423",
+                  "src": "postman-cloud:///1f0f3a10-3094-49f0-be32-be43d2fe886f"
+                },
+                {
+                  "key": "product_description",
+                  "value": "Testing_Desc",
+                  "type": "text",
+                  "uuid": "7c1ae152-f387-42d9-9ba1-8c5b9b4fefe0"
+                },
+                {
+                  "key": "product_category",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "a6dca487-523e-4151-a9c4-d9bfde71b5dd"
+                },
+                {
+                  "key": "product_sub_category",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "cfec3c8c-bbb7-4c01-b729-bfedcc167f76"
+                },
+                {
+                  "key": "product_price",
+                  "value": "300000",
+                  "type": "text",
+                  "uuid": "e977746b-3972-48af-90c5-9cbd3b2e3392"
+                },
+                {
+                  "key": "product_stock",
+                  "value": "100",
+                  "type": "text",
+                  "uuid": "1b227f80-c244-4659-a9db-f92ddef89d47"
+                },
+                {
+                  "key": "product_status",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "2f442c67-e513-4ec0-8e86-8c9d897adbda"
+                },
+                {
+                  "key": "action",
+                  "value": "update",
+                  "type": "text",
+                  "uuid": "91bff0fb-6fe9-4577-a137-a796a1c6420f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://royalblue-hedgehog-125991.hostingersite.com/cms/api/products/update.php?id=1",
+              "protocol": "https",
+              "host": [
+                "royalblue-hedgehog-125991",
+                "hostingersite",
+                "com"
+              ],
+              "path": [
+                "cms",
+                "api",
+                "products",
+                "update.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Delete",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "product_id",
+                  "value": "15",
+                  "type": "text",
+                  "uuid": "bbd1780b-f242-4836-8456-907d37d76f1e"
+                },
+                {
+                  "key": "product_pict",
+                  "type": "file",
+                  "uuid": "0eba5b5e-2c5e-4ce9-90a1-248a118c9423",
+                  "src": "postman-cloud:///1f0f3a10-3094-49f0-be32-be43d2fe886f"
+                },
+                {
+                  "key": "action",
+                  "value": "delete",
+                  "type": "text",
+                  "uuid": "91bff0fb-6fe9-4577-a137-a796a1c6420f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://royalblue-hedgehog-125991.hostingersite.com/cms/api/products/delete.php?id=15",
+              "protocol": "https",
+              "host": [
+                "royalblue-hedgehog-125991",
+                "hostingersite",
+                "com"
+              ],
+              "path": [
+                "cms",
+                "api",
+                "products",
+                "delete.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "15"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Stock",
+      "item": [
+        {
+          "name": "Read",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://royalblue-hedgehog-125991.hostingersite.com/cms/api/stock/read.php",
+              "protocol": "https",
+              "host": [
+                "royalblue-hedgehog-125991",
+                "hostingersite",
+                "com"
+              ],
+              "path": [
+                "cms",
+                "api",
+                "stock",
+                "read.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "product_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "bbd1780b-f242-4836-8456-907d37d76f1e"
+                },
+                {
+                  "key": "product_name",
+                  "value": "Testing APi",
+                  "type": "text",
+                  "uuid": "571f0f1d-459e-487f-964b-ff6e9a952ddb"
+                },
+                {
+                  "key": "product_pict",
+                  "type": "file",
+                  "uuid": "0eba5b5e-2c5e-4ce9-90a1-248a118c9423",
+                  "src": "postman-cloud:///1f0f3a10-3094-49f0-be32-be43d2fe886f"
+                },
+                {
+                  "key": "product_description",
+                  "value": "Testing_Desc",
+                  "type": "text",
+                  "uuid": "7c1ae152-f387-42d9-9ba1-8c5b9b4fefe0"
+                },
+                {
+                  "key": "product_category",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "a6dca487-523e-4151-a9c4-d9bfde71b5dd"
+                },
+                {
+                  "key": "product_sub_category",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "cfec3c8c-bbb7-4c01-b729-bfedcc167f76"
+                },
+                {
+                  "key": "product_price",
+                  "value": "300000",
+                  "type": "text",
+                  "uuid": "e977746b-3972-48af-90c5-9cbd3b2e3392"
+                },
+                {
+                  "key": "product_stock",
+                  "value": "100",
+                  "type": "text",
+                  "uuid": "1b227f80-c244-4659-a9db-f92ddef89d47"
+                },
+                {
+                  "key": "product_status",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "2f442c67-e513-4ec0-8e86-8c9d897adbda"
+                },
+                {
+                  "key": "action",
+                  "value": "update",
+                  "type": "text",
+                  "uuid": "91bff0fb-6fe9-4577-a137-a796a1c6420f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://royalblue-hedgehog-125991.hostingersite.com/cms/api/stock/update.php?id=1",
+              "protocol": "https",
+              "host": [
+                "royalblue-hedgehog-125991",
+                "hostingersite",
+                "com"
+              ],
+              "path": [
+                "cms",
+                "api",
+                "stock",
+                "update.php"
+              ],
+              "query": [
+                {
+                  "key": "id",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Transaction",
+      "item": [
+        {
+          "name": "Read",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://royalblue-hedgehog-125991.hostingersite.com/cms/api/transaction/read.php",
+              "protocol": "https",
+              "host": [
+                "royalblue-hedgehog-125991",
+                "hostingersite",
+                "com"
+              ],
+              "path": [
+                "cms",
+                "api",
+                "transaction",
+                "read.php"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "product_id",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "bbd1780b-f242-4836-8456-907d37d76f1e"
+                },
+                {
+                  "key": "product_name",
+                  "value": "Testing APi",
+                  "type": "text",
+                  "uuid": "571f0f1d-459e-487f-964b-ff6e9a952ddb"
+                },
+                {
+                  "key": "product_pict",
+                  "type": "file",
+                  "uuid": "0eba5b5e-2c5e-4ce9-90a1-248a118c9423",
+                  "src": "postman-cloud:///1f0f3a10-3094-49f0-be32-be43d2fe886f"
+                },
+                {
+                  "key": "product_description",
+                  "value": "Testing_Desc",
+                  "type": "text",
+                  "uuid": "7c1ae152-f387-42d9-9ba1-8c5b9b4fefe0"
+                },
+                {
+                  "key": "product_category",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "a6dca487-523e-4151-a9c4-d9bfde71b5dd"
+                },
+                {
+                  "key": "product_sub_category",
+                  "value": "3",
+                  "type": "text",
+                  "uuid": "cfec3c8c-bbb7-4c01-b729-bfedcc167f76"
+                },
+                {
+                  "key": "product_price",
+                  "value": "300000",
+                  "type": "text",
+                  "uuid": "e977746b-3972-48af-90c5-9cbd3b2e3392"
+                },
+                {
+                  "key": "product_stock",
+                  "value": "100",
+                  "type": "text",
+                  "uuid": "1b227f80-c244-4659-a9db-f92ddef89d47"
+                },
+                {
+                  "key": "product_status",
+                  "value": "1",
+                  "type": "text",
+                  "uuid": "2f442c67-e513-4ec0-8e86-8c9d897adbda"
+                },
+                {
+                  "key": "action",
+                  "value": "update",
+                  "type": "text",
+                  "uuid": "91bff0fb-6fe9-4577-a137-a796a1c6420f"
+                }
+              ]
+            },
+            "url": {
+              "raw": "https://royalblue-hedgehog-125991.hostingersite.com/cms/api/transaction/detail.php?transaction_id=KTS20260129132955760",
+              "protocol": "https",
+              "host": [
+                "royalblue-hedgehog-125991",
+                "hostingersite",
+                "com"
+              ],
+              "path": [
+                "cms",
+                "api",
+                "transaction",
+                "detail.php"
+              ],
+              "query": [
+                {
+                  "key": "transaction_id",
+                  "value": "KTS20260129132955760"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
